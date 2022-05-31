@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "893917567882",
+    "project_id": "desafio2salva",
+    "storage_bucket": "desafio2salva.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893917567882:android:8e8e69f6cd7ad36a73c673",
+        "android_client_info": {
+          "package_name": "com.example.desafio2salva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893917567882-7aalt1qgglriojon9ugrm6vjk8lu2edk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.desafio2salva",
+            "certificate_hash": "18b7c3f4756f3140c638c2ef30bf378eed8dd1de"
+          }
+        },
+        {
+          "client_id": "893917567882-d8j3e29c5k49dp4pmnvpbnm1suv7fcmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdo61xWvn9Uir0Om52y4gllNX7fXkIrF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893917567882-d8j3e29c5k49dp4pmnvpbnm1suv7fcmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
