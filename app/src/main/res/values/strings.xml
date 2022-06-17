@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">Desafio2Salva</string>
+    <string name="Prueba">prueba</string>
+    <string name="userName">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="btnEntrar">Login</string>
+    <string name="btnEntrarGoogle">Login con Google</string>
+    <string name="btnSalir">Salir</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="btnReiniciar">Reiniciar</string>
+    <string name="btnGenerarUser">Generar Usuario</string>
+    <string name="btnRegistrar">Registrar</string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="prefs_file">com.example.desafio2salva.PREFERENCE_FILE_KEY</string>
+    <string name="request_id_token">893917567882-d8j3e29c5k49dp4pmnvpbnm1suv7fcmn.apps.googleusercontent.com</string>
+    <string name="StrCheckSesion">Mantener sesion iniciada</string>
+    <string name="btnSi">Si</string>
+    <string name="btnNo">No</string>
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
+    <string name="smsActivarEnc">¿Quieres activar el evento?</string>
+    <string name="smsDesactivarEnc">¿Quieres desactivar el evento?</string>
+    <string name="btnActivar">Activar</string>
+    <string name="btnDesactivar">Desactivar</string>
+    <string name="Atencion">Precaución!!</string>
+    <string name="smsBorrarEvento">¿Quieres borrar este evento?</string>
+    <string name="swVerificado">Verificado</string>
+    <string name="smsBorrarUser">¿Quieres borrar este usuario?</string>
+    <string name="smsUnirEvento">¿Quieres unirte a este evento?</string>
+    <string name="smsSalirEvento">Vas a dejar de participar en el evento, ¿Estas seguro?</string>
+    <string name="menuInicio">Inicio</string>
+    <string name="menuUsuarios">Usuarios</string>
+    <string name="menuEvento">Eventos</string>
+    <string name="smsUsuarioSinActivar">Tienes que esperar a que un administrador te active la cuenta para utilizar la app</string>
+    <string name="smsBienvenida">Eventos programados para hoy</string>
+    <string name="txtMostrarTodos">Mostrar todos los eventos</string>
+    <string name="btnAddFoto">Añadir foto</string>
+
 </resources>
