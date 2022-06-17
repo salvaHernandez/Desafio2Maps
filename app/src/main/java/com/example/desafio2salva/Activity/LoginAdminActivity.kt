@@ -4,26 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.core.view.get
 import com.example.desafio2salva.Fragments.EventoFragment
 import com.example.desafio2salva.Fragments.HomeFragment
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Fragments.UsuarioFragment
-import com.example.desafio2salva.Utils.Auxiliar
-import com.example.desafio2salva.Utils.Auxiliar.getEventos
 import com.example.desafio2salva.Utils.Auxiliar.getEventosDeHoy
 import com.example.desafio2salva.Utils.Auxiliar.getEventosSinRecarga
 import com.example.desafio2salva.Utils.Auxiliar.getUsuarios
 import com.example.desafio2salva.Utils.Auxiliar.intentFoto
 import com.example.desafio2salva.Utils.Auxiliar.listaEventosHoy
 import com.example.desafio2salva.Utils.Auxiliar.listaUsuarios
-import com.example.desafio2salva.Utils.Auxiliar.miAdapterEventoAdmin
 import kotlinx.android.synthetic.main.activity_login_admin.*
 import kotlinx.android.synthetic.main.nav_header.*
-import kotlinx.android.synthetic.main.nav_header.view.*
 
 class LoginAdminActivity : AppCompatActivity() {
 companion object {

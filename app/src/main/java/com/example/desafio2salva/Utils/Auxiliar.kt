@@ -11,9 +11,7 @@ import com.example.desafio2salva.Model.Evento
 import com.example.desafio2salva.Model.Usuario
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -63,16 +61,6 @@ object Auxiliar {
 
     fun getBitmap(image: ByteArray): Bitmap? {
         return BitmapFactory.decodeByteArray(image, 0, image.size)
-    }
-
-    private suspend fun image(nombre: String): ByteArray? {
-        return try {
-            val imgRef = storageRef.child("FotosEvento/$nombre.jpg")
-            val ONE_MEGABYTE: Long = 1024 * 1024
-            imgRef.getBytes(ONE_MEGABYTE).await()
-        } catch (e: Exception) {
-            null
-        }
     }
 
 

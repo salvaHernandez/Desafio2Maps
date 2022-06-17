@@ -21,18 +21,18 @@ class RecyclerHomeAdmin (var context: AppCompatActivity, var evento:ArrayList<Ev
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.evento_card, parent, false), context
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.evento_card, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = evento[position]
-        holder.bind(item, context, this)
+        holder.bind(item, context)
     }
 
 
 
-    class ViewHolder(view: View, context: AppCompatActivity): RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         val nombre = view.findViewById<TextView>(R.id.txtNombreUserCard)
         val fecha = view.findViewById<TextView>(R.id.txtLatUserCard)
@@ -40,7 +40,7 @@ class RecyclerHomeAdmin (var context: AppCompatActivity, var evento:ArrayList<Ev
         val numAsistentes = view.findViewById<TextView>(R.id.txtAsistentesEventoCard)
         val chkActivado = view.findViewById<CheckBox>(R.id.chkVerificado)
 
-        fun bind(e: Evento, context: AppCompatActivity, adaptador: RecyclerHomeAdmin) {
+        fun bind(e: Evento, context: AppCompatActivity) {
 
             chkActivado.text = ("Act/Des")
             chkActivado.isChecked = e.estado

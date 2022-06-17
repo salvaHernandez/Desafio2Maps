@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.fragment_usuario.*
 class UsuarioFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //  return super.onCreateView(inflater, container, savedInstanceState) {
         val view=inflater?.inflate(R.layout.fragment_usuario, container, false)
         return view
     }

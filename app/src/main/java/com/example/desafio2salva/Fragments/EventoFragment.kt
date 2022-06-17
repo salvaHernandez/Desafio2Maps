@@ -2,7 +2,6 @@ package com.example.desafio2salva.Fragments
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,6 @@ import kotlinx.android.synthetic.main.fragment_evento.*
 class EventoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //  return super.onCreateView(inflater, container, savedInstanceState) {
         val view=inflater?.inflate(R.layout.fragment_evento, container, false)
         return view
     }
@@ -31,7 +29,7 @@ class EventoFragment : Fragment() {
 
         recyclerEventosAdmin.setHasFixedSize(true)
         recyclerEventosAdmin.layoutManager = LinearLayoutManager(view.context)
-        miAdapterEventoAdmin = RecyclerEventoAdmin(con, listaEventos,"Hola")
+        miAdapterEventoAdmin = RecyclerEventoAdmin(con, listaEventos)
         recyclerEventosAdmin.adapter = miAdapterEventoAdmin
 
 

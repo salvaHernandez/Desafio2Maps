@@ -34,7 +34,7 @@ class EditEventoActivity : AppCompatActivity() {
         event = intent.getSerializableExtra("evento")!! as Evento
 
         txtNombreEditEvento.text = event.nombre
-        txtInfoEditEvento.append("Fecha ${event.fecha} , Hora ${event.hora}, Asistentes: ${event.asistentes.size}")
+        txtInfoEditEvento.append("Fecha ${event.fecha} , ${event.hora}, Asistentes: ${event.asistentes.size}")
         swAct.isChecked = event.estado
 
         // Storage Fotos
@@ -44,7 +44,7 @@ class EditEventoActivity : AppCompatActivity() {
 
         recyclerFoto.setHasFixedSize(true)
         recyclerFoto.layoutManager = LinearLayoutManager(this)
-        miAdapterFoto = RecyclerFotoEvento(this, event, listaImagenes)
+        miAdapterFoto = RecyclerFotoEvento(this, listaImagenes)
         recyclerFoto.adapter = miAdapterFoto
 
         CargarImagenes(event.nombre)

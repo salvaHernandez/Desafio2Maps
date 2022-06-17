@@ -20,16 +20,16 @@ class RecyclerEvento (var context: AppCompatActivity, var evento:ArrayList<Event
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.evento_card,parent,false), context)
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.evento_card,parent,false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = evento[position]
-        holder.bind(item, context, this, usuario)
+        holder.bind(item, context, usuario)
     }
 
 
-    class ViewHolder(view: View, context: AppCompatActivity): RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         val nombre = view.findViewById<TextView>(R.id.txtNombreUserCard)
         val fecha = view.findViewById<TextView>(R.id.txtLatUserCard)
@@ -37,7 +37,7 @@ class RecyclerEvento (var context: AppCompatActivity, var evento:ArrayList<Event
         val numAsistentes = view.findViewById<TextView>(R.id.txtAsistentesEventoCard)
         val chkAsiste = view.findViewById<CheckBox>(R.id.chkVerificado)
 
-        fun bind(e: Evento, context: AppCompatActivity, adaptador:RecyclerEvento, usuario: String){
+        fun bind(e: Evento, context: AppCompatActivity, usuario: String){
 
             chkAsiste.text = ("Asistencia")
             nombre.text = e.nombre
@@ -50,15 +50,15 @@ class RecyclerEvento (var context: AppCompatActivity, var evento:ArrayList<Event
 
             itemView.setOnClickListener{
                 if(chkAsiste.isChecked) {
-                    SalirEvento(context, usuario, e, adaptador)
+                    SalirEvento(context, usuario, e)
                 } else {
-                    UnionEvento(context, usuario, e, adaptador)
+                    UnionEvento(context, usuario, e)
                 }
             }
 
         }
 
-        private fun UnionEvento(context: AppCompatActivity, usuario: String, e: Evento, adaptador: RecyclerEvento) {
+        private fun UnionEvento(context: AppCompatActivity, usuario: String, e: Evento) {
             AlertDialog.Builder(context)
                 .setTitle(R.string.Atencion)
                 .setMessage(R.string.smsUnirEvento)
@@ -80,7 +80,7 @@ class RecyclerEvento (var context: AppCompatActivity, var evento:ArrayList<Event
         }
 
 
-        private fun SalirEvento(context: AppCompatActivity, usuario: String, e: Evento, adaptador: RecyclerEvento) {
+        private fun SalirEvento(context: AppCompatActivity, usuario: String, e: Evento) {
             AlertDialog.Builder(context)
                 .setTitle(R.string.Atencion)
                 .setMessage(R.string.smsSalirEvento)

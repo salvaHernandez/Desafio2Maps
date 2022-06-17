@@ -15,7 +15,7 @@ import com.example.desafio2salva.Utils.Auxiliar.listaEventos
 import com.example.desafio2salva.Utils.Auxiliar.modificaEvento
 
 
-class RecyclerEventoAdmin (var context: AppCompatActivity, var evento:ArrayList<Evento>, var usuario:String) : RecyclerView.Adapter<RecyclerEventoAdmin.ViewHolder>(){
+class RecyclerEventoAdmin (var context: AppCompatActivity, var evento:ArrayList<Evento>) : RecyclerView.Adapter<RecyclerEventoAdmin.ViewHolder>(){
 
 
     override fun getItemCount(): Int {
@@ -24,18 +24,18 @@ class RecyclerEventoAdmin (var context: AppCompatActivity, var evento:ArrayList<
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.evento_card, parent, false), context
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.evento_card, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = evento[position]
-        holder.bind(item, context, this, usuario)
+        holder.bind(item, context, this)
     }
 
 
 
-    class ViewHolder(view: View, context: AppCompatActivity): RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         val nombre = view.findViewById<TextView>(R.id.txtNombreUserCard)
         val fecha = view.findViewById<TextView>(R.id.txtLatUserCard)
@@ -43,7 +43,7 @@ class RecyclerEventoAdmin (var context: AppCompatActivity, var evento:ArrayList<
         val numAsistentes = view.findViewById<TextView>(R.id.txtAsistentesEventoCard)
         val chkActivado = view.findViewById<CheckBox>(R.id.chkVerificado)
 
-        fun bind(e: Evento, context: AppCompatActivity, adaptador: RecyclerEventoAdmin, usuario: String) {
+        fun bind(e: Evento, context: AppCompatActivity, adaptador: RecyclerEventoAdmin) {
 
             chkActivado.text = ("Act/Des")
             chkActivado.isChecked = e.estado
@@ -54,7 +54,6 @@ class RecyclerEventoAdmin (var context: AppCompatActivity, var evento:ArrayList<
 
 
             itemView.setOnClickListener{
-                var mensaje = ""
 
                 if(chkActivado.isChecked) {
                     dialogDesactivar(context, e ,  false)
@@ -63,10 +62,10 @@ class RecyclerEventoAdmin (var context: AppCompatActivity, var evento:ArrayList<
                 }
             }
 
-            itemView.setOnLongClickListener ({
+            itemView.setOnLongClickListener {
                 dialogBorrado(context, adaptador, e)
                 true
-            })
+            }
 
         }
 

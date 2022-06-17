@@ -4,16 +4,13 @@ import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio2salva.Activity.MainActivity
-import com.example.desafio2salva.Model.Evento
 import com.example.desafio2salva.Model.Usuario
 import com.example.desafio2salva.R
-import com.example.desafio2salva.Utils.Auxiliar
 import com.example.desafio2salva.Utils.Auxiliar.listaUsuarios
 import com.example.desafio2salva.Utils.Auxiliar.modificaUsuario
 
@@ -26,7 +23,7 @@ class RecyclerUsuario (var context: AppCompatActivity, var listaUser:ArrayList<U
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.usuario_card,parent,false), context)
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.usuario_card,parent,false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -35,7 +32,7 @@ class RecyclerUsuario (var context: AppCompatActivity, var listaUser:ArrayList<U
     }
 
 
-    class ViewHolder(view: View, context: AppCompatActivity): RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         val nombre=view.findViewById<TextView>(R.id.txtNombreUserCard)
         val verificado=view.findViewById<Switch>(R.id.swVerificado)
@@ -55,10 +52,10 @@ class RecyclerUsuario (var context: AppCompatActivity, var listaUser:ArrayList<U
                 }
             }
 
-            itemView.setOnLongClickListener ({
+            itemView.setOnLongClickListener {
                 BorrarUser(context, adaptador, u)
                 true
-            })
+            }
 
         }
 

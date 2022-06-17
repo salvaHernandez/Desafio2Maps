@@ -1,14 +1,10 @@
 package com.example.desafio2salva.Activity
 
-import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.desafio2salva.Activity.MainActivity.Companion.db
 import com.example.desafio2salva.Adapter.RecyclerEvento
-import com.example.desafio2salva.Model.Evento
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Utils.Auxiliar.getEventos
 import com.example.desafio2salva.Utils.Auxiliar.listaEventos

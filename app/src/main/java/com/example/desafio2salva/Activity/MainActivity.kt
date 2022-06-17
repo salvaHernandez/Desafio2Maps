@@ -11,7 +11,6 @@ import com.example.desafio2salva.Model.ProviderType
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Model.UsuarioGuardado.Companion.user
 import com.example.desafio2salva.Utils.Auxiliar.listaEventos
-import com.example.desafio2salva.Utils.Auxiliar.listaEventosHoy
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -31,7 +30,6 @@ companion object {
     private var lat = 0.0
     private var lon = 0.0
     private var RC_SIGN_IN = 1
-    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
