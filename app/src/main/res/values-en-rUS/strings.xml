@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Desafio2Salva</string>
+    <string name="Prueba">prub</string>
+    <string name="userName">User</string>
+    <string name="pass">Pass</string>
+    <string name="btnEntrar">Login</string>
+    <string name="btnEntrarGoogle">Login with Google</string>
+    <string name="btnSalir">Exit</string>
+    <string name="btnEnviar">Send</string>
+    <string name="btnReiniciar">Restart</string>
+    <string name="btnGenerarUser">Generate User</string>
+    <string name="btnRegistrar">Register</string>
+    <string name="btnCancelar">Cancel</string>
+    <string name="prefs_file">com.example.desafio2salva.PREFERENCE_FILE_KEY</string>
+    <string name="request_id_token">893917567882-d8j3e29c5k49dp4pmnvpbnm1suv7fcmn.apps.googleusercontent.com</string>
+    <string name="StrCheckSesion">Keep me signed in</string>
+    <string name="btnSi">Yes</string>
+    <string name="btnNo">No</string>
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
+    <string name="smsActivarEnc">Do you want to activate the event?</string>
+    <string name="smsDesactivarEnc">Do you want to disable the event?</string>
+    <string name="btnActivar">Activate</string>
+    <string name="btnDesactivar">Disable</string>
+    <string name="Atencion">Caution!!</string>
+    <string name="smsBorrarEvento">Do you want to delete this event?</string>
+    <string name="swVerificado">Verified</string>
+    <string name="smsBorrarUser">Do you want to delete this user?</string>
+    <string name="smsUnirEvento">Do you want to join this event?</string>
+    <string name="smsSalirEvento">You are going to stop participating in the event, are you sure?</string>
+    <string name="menuInicio">Initiation</string>
+    <string name="menuUsuarios">Users</string>
+    <string name="menuEvento">Events</string>
+    <string name="smsUsuarioSinActivar">You have to wait for an administrator to activate your account to use the app</string>
+    <string name="smsBienvenida">Events program for today</string>
+    <string name="txtMostrarTodos">Show all events</string>
+    <string name="btnAddFoto">Add photo</string>
+    <string name="smsSinPermisos">The user is an administrator, you do not have permission to modify it</string>
+    <string name="smsSinPermisosB">The user is an administrator, you do not have permission to delete it</string>
+    <string name="smsSinPermisoLocalizacion">You have to accept the location permissions, go to settings or reinstall the app</string>
+    <string name="topTittle">Event management</string>
+
+</resources>
