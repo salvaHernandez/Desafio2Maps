@@ -55,7 +55,6 @@ class EditEventoActivity : AppCompatActivity() {
     fun addFoto (view:View) {
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(cameraIntent, CAMERA_REQUEST)
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

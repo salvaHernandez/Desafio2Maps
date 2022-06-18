@@ -60,13 +60,14 @@ object Auxiliar {
                         miAdapterFoto.notifyDataSetChanged()
                     }
                 }
-            }
+        }
     }
 
 
     fun SubirImg(image: Bitmap, nombre : String) {
         val imgRef = storageRef.child("$nombre/${Random.nextInt()}.jpg")
         imgRef.putBytes(getBytes(image)!!)
+        CargarImagenes(nombre)
     }
 
     fun getBitmap(image: ByteArray): Bitmap? {
