@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.con
+import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.conLoginAdmin
 import com.example.desafio2salva.Adapter.RecyclerUsuario
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Utils.Auxiliar.listaUsuarios
@@ -27,7 +27,7 @@ class UsuarioFragment : Fragment() {
 
         recyclerUsuariosAdmin.setHasFixedSize(true)
         recyclerUsuariosAdmin.layoutManager = LinearLayoutManager(view.context)
-        miAdapterUserAdmin = RecyclerUsuario (con, listaUsuarios)
+        miAdapterUserAdmin = RecyclerUsuario (conLoginAdmin, listaUsuarios)
         recyclerUsuariosAdmin.adapter = miAdapterUserAdmin
     }
 }

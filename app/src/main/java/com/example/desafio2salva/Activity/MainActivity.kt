@@ -8,12 +8,14 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.desafio2salva.Model.ProviderType
+import com.example.desafio2salva.Model.Usuario
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Model.UsuarioGuardado.Companion.user
 import com.example.desafio2salva.Utils.Auxiliar.listaEventos
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.location.LocationServices
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
@@ -24,17 +26,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 companion object {
     val db = FirebaseFirestore.getInstance()
+    val REQUEST_CODE_LOCATION = 0
+
 }
 
     //Atributos necesarios para el login con Google.
     private var lat = 0.0
     private var lon = 0.0
     private var RC_SIGN_IN = 1
+    private var usuario = Usuario ("",0.0,0.0,false,false)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         supportActionBar?.hide()
         listaEventos = arrayListOf()
@@ -48,7 +54,9 @@ companion object {
         analy.logEvent("InitScreen",bundle)
 
 
+
     }
+
 
 
     fun Registrar (view: View) {
@@ -171,18 +179,21 @@ companion object {
 
     //*********************************************************************************
     private fun irLogin(email:String, provider: ProviderType, isAdmin : Boolean, verificado : Boolean){
-        val intent : Intent
-        if (isAdmin) {
-             intent = Intent(this, LoginAdminActivity::class.java).apply {
-                putExtra("email",email)
-            }
-        } else {
-             intent = Intent(this, LoginUserActivity::class.java).apply {
-                putExtra("email",email)
-                 putExtra("verificado", verificado)
-            }
 
+        txtUser.text.clear()
+        txtPass.text.clear()
+
+        usuario.verificado = verificado
+        usuario.admin = isAdmin
+        usuario.email = email
+        val intent : Intent
+
+        if (isAdmin) {
+             intent = Intent(this, LoginAdminActivity::class.java)
+        } else {
+             intent = Intent(this, LoginUserActivity::class.java)
         }
+        intent.putExtra("user", usuario)
         startActivity(intent)
     }
 
@@ -212,7 +223,6 @@ companion object {
             }
         }
     }
-
 
 
 }

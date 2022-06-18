@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorBtn">#054C46</color>
+    <color name="colorBtn">#086C63</color>
+
+    <color name="colorApp">#054C46</color>
+    <color name="colorSecundario">#066058</color>
 
 </resources>

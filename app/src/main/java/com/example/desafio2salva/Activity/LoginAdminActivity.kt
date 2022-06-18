@@ -10,6 +10,7 @@ import com.example.desafio2salva.Fragments.EventoFragment
 import com.example.desafio2salva.Fragments.HomeFragment
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Fragments.UsuarioFragment
+import com.example.desafio2salva.Model.Usuario
 import com.example.desafio2salva.Utils.Auxiliar.getEventosDeHoy
 import com.example.desafio2salva.Utils.Auxiliar.getEventosSinRecarga
 import com.example.desafio2salva.Utils.Auxiliar.getUsuarios
@@ -21,19 +22,25 @@ import kotlinx.android.synthetic.main.nav_header.*
 
 class LoginAdminActivity : AppCompatActivity() {
 companion object {
-    lateinit var con : AppCompatActivity
+    lateinit var conLoginAdmin : AppCompatActivity
     lateinit var intentCrearEvento: Intent
-}
 
+}
+    lateinit var usuario : Usuario
     private lateinit var toogle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_admin)
+        supportActionBar?.title = getString(R.string.topTittle)
+        conLoginAdmin = this
 
         toogle = ActionBarDrawerToggle(this, drawerLayoutAdmin, R.string.open_drawer, R.string.close_drawer)
         drawerLayoutAdmin.addDrawerListener(toogle)
         toogle.syncState()
+
+        usuario = intent.getSerializableExtra("user") as Usuario
+
 
         intentCrearEvento = Intent (this,EventoActivity::class.java)
         intentFoto = Intent (this,EditEventoActivity::class.java)
@@ -44,7 +51,6 @@ companion object {
         getEventosDeHoy()
         getEventosSinRecarga()
         getUsuarios()
-        con = this
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -78,7 +84,7 @@ companion object {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toogle.onOptionsItemSelected(item)) {
-            txtEmailAdmin.setText(intent.getStringExtra("email")!!)
+            txtEmailAdmin.text = usuario.email
 
             return true
         }

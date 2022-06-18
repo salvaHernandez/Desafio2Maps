@@ -35,5 +35,9 @@
     <string name="smsBienvenida">Eventos programados para hoy</string>
     <string name="txtMostrarTodos">Mostrar todos los eventos</string>
     <string name="btnAddFoto">Añadir foto</string>
+    <string name="smsSinPermisos">El usuario es administrador, no tienes permiso para modificarlo</string>
+    <string name="smsSinPermisosB">El usuario es administrador, no tienes permiso para borrarlo</string>
+    <string name="smsSinPermisoLocalizacion">Tienes que aceptar los permisos de localización, Ve a ajustes o reinstala la app</string>
+    <string name="topTittle">Gestion de eventos</string>
 
 </resources>

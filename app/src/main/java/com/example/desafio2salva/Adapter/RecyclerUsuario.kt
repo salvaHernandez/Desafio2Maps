@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio2salva.Activity.MainActivity
@@ -45,15 +46,23 @@ class RecyclerUsuario (var context: AppCompatActivity, var listaUser:ArrayList<U
 
 
             itemView.setOnClickListener{
-                if(verificado.isChecked) {
-                    ModificarVerificacion(u, false)
+                if (!u.admin) {
+                    if(verificado.isChecked) {
+                        ModificarVerificacion(u, false)
+                    } else {
+                        ModificarVerificacion(u, true)
+                    }
                 } else {
-                    ModificarVerificacion(u, true)
+                    Toast.makeText(context, R.string.smsSinPermisos, Toast.LENGTH_SHORT).show()
                 }
             }
 
             itemView.setOnLongClickListener {
-                BorrarUser(context, adaptador, u)
+                if (!u.admin) {
+                    BorrarUser(context, adaptador, u)
+                } else {
+                    Toast.makeText(context, R.string.smsSinPermisosB, Toast.LENGTH_SHORT).show()
+                }
                 true
             }
 
@@ -62,7 +71,7 @@ class RecyclerUsuario (var context: AppCompatActivity, var listaUser:ArrayList<U
         private fun ModificarVerificacion(u: Usuario, estado : Boolean) {
             verificado.isChecked = estado
             u.verificado = estado
-            modificaUsuario(u)
+            modificaUsuario(u, true)
         }
 
         private fun BorrarUser (context: AppCompatActivity, adaptador: RecyclerUsuario, u : Usuario) {

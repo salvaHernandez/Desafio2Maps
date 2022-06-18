@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.con
+import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.conLoginAdmin
 import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.intentCrearEvento
 import com.example.desafio2salva.Adapter.RecyclerEventoAdmin
 import com.example.desafio2salva.R
@@ -29,7 +29,7 @@ class EventoFragment : Fragment() {
 
         recyclerEventosAdmin.setHasFixedSize(true)
         recyclerEventosAdmin.layoutManager = LinearLayoutManager(view.context)
-        miAdapterEventoAdmin = RecyclerEventoAdmin(con, listaEventos)
+        miAdapterEventoAdmin = RecyclerEventoAdmin(conLoginAdmin, listaEventos)
         recyclerEventosAdmin.adapter = miAdapterEventoAdmin
 
 

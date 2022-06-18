@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.con
+import com.example.desafio2salva.Activity.LoginAdminActivity.Companion.conLoginAdmin
 import com.example.desafio2salva.Adapter.RecyclerHomeAdmin
 import com.example.desafio2salva.R
 import com.example.desafio2salva.Utils.Auxiliar.listaEventos
@@ -28,11 +28,11 @@ class HomeFragment : Fragment() {
 
         recyclerHomeAdmin.setHasFixedSize(true)
         recyclerHomeAdmin.layoutManager = LinearLayoutManager(view.context)
-        miAdapterEventosHoy = RecyclerHomeAdmin (con, listaEventosHoy)
+        miAdapterEventosHoy = RecyclerHomeAdmin (conLoginAdmin, listaEventosHoy)
         recyclerHomeAdmin.adapter = miAdapterEventosHoy
 
         txtMostrarTodos.setOnClickListener {
-            miAdapterEventosHoy = RecyclerHomeAdmin (con, listaEventos)
+            miAdapterEventosHoy = RecyclerHomeAdmin (conLoginAdmin, listaEventos)
             recyclerHomeAdmin.adapter = miAdapterEventosHoy
         }
     }

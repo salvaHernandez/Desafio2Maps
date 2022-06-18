@@ -1,14 +1,23 @@
 package com.example.desafio2salva.Utils
 
+import android.Manifest
 import android.content.ContentValues
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.example.desafio2salva.Activity.MainActivity
 import com.example.desafio2salva.Activity.MainActivity.Companion.db
 import com.example.desafio2salva.Adapter.*
 import com.example.desafio2salva.Model.Evento
 import com.example.desafio2salva.Model.Usuario
+import com.example.desafio2salva.R
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.ByteArrayOutputStream
@@ -18,6 +27,7 @@ import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 object Auxiliar {
+
 
     var listaImagenes : ArrayList<Bitmap> = arrayListOf()
     lateinit var listaUsuarios : ArrayList<Usuario>
@@ -238,7 +248,7 @@ object Auxiliar {
         } else miAdapterEvento.notifyDataSetChanged()
     }
 
-    fun modificaUsuario (u:Usuario) {
+    fun modificaUsuario (u:Usuario, usaAdapter:Boolean) {
         db.collection("users").document(u.email).set(
             hashMapOf(
                 "admin" to u.admin,
@@ -247,6 +257,8 @@ object Auxiliar {
                 "verificado" to u.verificado
             )
         )
-        miAdapterUserAdmin.notifyDataSetChanged()
+        if (usaAdapter) {
+            miAdapterUserAdmin.notifyDataSetChanged()
+        }
     }
 }

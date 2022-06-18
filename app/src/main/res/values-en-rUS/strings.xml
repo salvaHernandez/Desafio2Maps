@@ -36,5 +36,9 @@
     <string name="smsBienvenida">Events program for today</string>
     <string name="txtMostrarTodos">Show all events</string>
     <string name="btnAddFoto">Add photo</string>
+    <string name="smsSinPermisos">The user is an administrator, you do not have permission to modify it</string>
+    <string name="smsSinPermisosB">The user is an administrator, you do not have permission to delete it</string>
+    <string name="smsSinPermisoLocalizacion">You have to accept the location permissions, go to settings or reinstall the app</string>
+    <string name="topTittle">Event management</string>
 
 </resources>
